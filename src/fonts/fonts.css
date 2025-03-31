@@ -1,0 +1,11 @@
+
+@font-face {
+    font-family: Haurora;
+    src: local(Haurora);
+        url('ttf/Haurora-Regular.ttf') format('truetype');,
+        url('otf/Haurora-Regular.otf') format('opentype');,
+        url('woff/Haurora-Regular.woff') format('woff'),
+        url('woff2/Haurora-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
