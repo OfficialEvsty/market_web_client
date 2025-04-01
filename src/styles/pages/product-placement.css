@@ -8,6 +8,7 @@ h1 {
 }
 
 .prod-wrapper {
+    min-width: 0;
     display: flex;
     max-width: var(--max-width);
     gap: 48px;
@@ -16,11 +17,31 @@ h1 {
 .prod-container {
     display: flex;
     gap: 8px;
+    min-width: 0;
     flex-wrap: wrap;
-    justify-content: flex-start;
     overflow-x: hidden;
 }
 
 .card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 348px;
+}
 
+.empty-card-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    gap: 24px;
+}
+
+.card-info {
+    gap: 12px;
+    display: block;
+    text-wrap: nowrap;
+    text-align: center;
 }
