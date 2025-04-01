@@ -3,9 +3,16 @@
   --secondary: #F6F6F6;
   --secondary-hover: #EAEAEA;
 
+  --primary-font: #121212;
+  --secondary-font: #8D8D8D;
+
+  --max-width: 1400px;
+
+
   padding: 0;
   margin: 0;
 }
+
 
 a {
   font-weight: 500;
@@ -17,7 +24,7 @@ a:hover {
 }
 
 body {
-  font-family: Haurora-Regular, sans-serif;
+  font-family: Hauora, sans-serif;
   margin: 0;
   background: var(--primary);
 }

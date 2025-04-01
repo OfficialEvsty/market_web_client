@@ -1,0 +1,26 @@
+h1 {
+    margin: 0;
+    max-width: var(--max-width);
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 48px;
+    color: var(--primary-font);
+}
+
+.prod-wrapper {
+    display: flex;
+    max-width: var(--max-width);
+    gap: 48px;
+}
+
+.prod-container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow-x: hidden;
+}
+
+.card-container {
+
+}

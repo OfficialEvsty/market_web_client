@@ -2,6 +2,15 @@
   margin: 0 auto;
 }
 
+@font-face {
+  font-family: "Hauora";
+  src:    local("Hauora"),
+  url("fonts/ttf/Hauora-Regular.ttf") format('truetype'),
+  url('fonts/otf/Hauora-Regular.otf') format('opentype'),
+  url('fonts/woff/Hauora-Regular.woff') format('woff'),
+  url('fonts/woff2/Hauora-Regular.woff2') format('woff2');
+}
+
 
 
 

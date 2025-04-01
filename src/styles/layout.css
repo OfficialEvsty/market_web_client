@@ -69,6 +69,12 @@ header {
     background: var(--secondary);
 }
 
+main {
+    display: grid;
+    padding: 64px 260px 64px 260px;
+    gap: 48px;
+}
+
 footer {
     padding: 48px;
     background: var(--secondary);
@@ -97,8 +103,44 @@ footer {
 }
 
 .copyright {
+    display: flex;
+    align-self: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
 
-    align-self: flex-end;
-    display: block;
-    gap: 200px;
+
+footer {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-between;
+}
+
+
+.pre-wrapper>p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    color: var(--secondary-font);
+}
+
+.info>.clmn>p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--secondary-font);
+}
+
+.info>.clmn>h3 {
+    text-wrap: nowrap;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.copyright>span {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--secondary-font);
 }
