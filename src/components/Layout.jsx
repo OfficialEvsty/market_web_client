@@ -1,11 +1,12 @@
 import { Outlet } from "react-router-dom";
 import "/src/styles/layout.css"
-import {useRef} from "react";
+import {useRef, useState} from "react";
 
 
 const Layout = () => {
 
     const searchRef = useRef(null);
+    const [placeholder, setPlaceholder] = useState("Искать в Месте");
 
     // focus on input if input group was focus
     const onSearchGroupClick = () => {
@@ -24,7 +25,8 @@ const Layout = () => {
             <div className='navi'>
                 <div className='search-wrapper' onClick={onSearchGroupClick} ref={searchRef}>
                     <img src='/assets/svg/Search.svg' alt='Поиск'/>
-                    <input type='text' className='search-box' placeholder='Искать в Месте'/>
+                    <input type='text' className='search-box' maxLength='100' placeholder={placeholder} onFocus={() => {setPlaceholder('')}} onBlur={() => {setPlaceholder('Искать в Месте')}}/>
+
                 </div>
                 <button className='header-btn'>
                     <img src='/assets/svg/Send.svg' alt='локация'/>

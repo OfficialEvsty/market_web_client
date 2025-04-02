@@ -47,10 +47,8 @@ header {
 }
 
 .search-box {
-    flex: 1 1 200px;
     min-width: 180px;
-    width: auto;
-    border-radius: 24px;
+    width: 100%;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -70,8 +68,11 @@ header {
 }
 
 main {
-    display: grid;
-    padding: 64px 260px 64px 260px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 64px 48px 64px 48px;
+    margin: 0 auto;
     gap: 48px;
 }
 
@@ -94,12 +95,14 @@ footer {
     display: flex;
     grid-template-columns: [catalog] auto [about] auto [company] auto [contacts] auto ;
     gap: 24px;
+    max-width: 844px;
+    width: 100%;
 }
 
 .clmn {
     display: grid;
     grid-template-columns: auto;
-
+    width: 100%;
 }
 
 .copyright {
@@ -122,6 +125,8 @@ footer {
     font-size: 20px;
     font-weight: 400;
     line-height: 32px;
+    max-width: 844px;
+    width: 100%;
     color: var(--secondary-font);
 }
 
