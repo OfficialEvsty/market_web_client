@@ -2,6 +2,7 @@ import "../styles/pages/product-placement.css";
 import ProductCard from "../components/templates/ProductCard.jsx";
 
 const ProductPlacement = () => {
+
     return (
         <>
             <h1>Каталог</h1>

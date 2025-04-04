@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
 import "/src/styles/layout.css"
 import {useRef, useState} from "react";
-
+import {LoginButton} from "./buttons/LoginButton.jsx";
 
 const Layout = () => {
 
     const searchRef = useRef(null);
     const [placeholder, setPlaceholder] = useState("Искать в Месте");
+
+
 
     // focus on input if input group was focus
     const onSearchGroupClick = () => {
@@ -33,9 +35,7 @@ const Layout = () => {
                     Москва, МО
                     <img src='/assets/svg/ChevronRight.svg' alt='список'/>
                 </button>
-                <button className='header-btn'>
-                    <img src='/assets/svg/User.svg' alt='user'/>
-                    Войти</button>
+                <LoginButton/>
             </div>
         </header>
         <main>
