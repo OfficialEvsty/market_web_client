@@ -1,16 +1,27 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 8080, // Порт для dev-сервера
-    allowedHosts: ['212.87.220.204', '138.124.16.253', 'umaiden.ru', 'id.umaiden.ru'],
+    host: '0.0.0.0', // Критически важно для Docker
+    port: 8080,
+    strictPort: true,
+    allowedHosts: [
+      'umaiden.ru',
+      'www.umaiden.ru',
+      'id.umaiden.ru',
+      '212.87.220.204',
+      'localhost'
+    ]
   },
   preview: {
-    port: 80, // Порт для preview-сервера
+    host: '0.0.0.0',
+    port: 80,
     strictPort: true,
-    allowedHosts: ['212.87.220.204', '138.124.16.253', 'umaiden.ru', 'id.umaiden.ru'],
+    allowedHosts: [
+      '.umaiden.ru', // Все поддомены
+      '212.87.220.204',
+      '138.124.16.253'
+    ]
   }
 })

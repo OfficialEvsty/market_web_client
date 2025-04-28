@@ -3,6 +3,6 @@ services:
     build:
       context: .
     environment:
-      VITE_ALLOWED_HOST: $VITE_ALLOWED_HOST
+      VITE_ALLOWED_HOST: $__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS
     ports:
       - $WEB_PORT:$WEB_PORT
