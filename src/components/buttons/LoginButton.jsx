@@ -11,16 +11,27 @@ export const LoginButton = () => {
         const codeChallenge = await generateCodeChallenge(codeVerifier);
         sessionStorage.setItem("code_verifier", codeVerifier);
 
-        const authorizeUrl = new URL(`https://${import.meta.env.VITE_SSO_DOMAIN}/authorize`)
-        authorizeUrl.searchParams.append('response_type', 'code')
-        authorizeUrl.searchParams.append('client_id', import.meta.env.VITE_CLIENT_ID);
-        authorizeUrl.searchParams.append('redirect_url', redirectUrl + '/' + import.meta.env.VITE_AUTHORIZE_CALLBACK);
-        authorizeUrl.searchParams.append('scope', 'openid profile email');
-        authorizeUrl.searchParams.append('state', import.meta.env.VITE_STATE_STRING_AUTHORIZE);
-        authorizeUrl.searchParams.append('code_challenge', codeChallenge);
-        authorizeUrl.searchParams.append('code_challenge_method', import.meta.env.VITE_HASH_METHOD);
+        const requestOptions = {
+            method: 'POST',
+            credentials: "include",
+            headers: {
+                'Content-Type': 'x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                response_type: 'code',
+                client_id: import.meta.env.VITE_CLIENT_ID,
+                redirect_uri: redirectUrl + '/' + import.meta.env.VITE_AUTHORIZE_CALLBACK,
+                scope: "openid profile",
+                state: 'stateless',
+                code_challenge: codeChallenge,
+                code_challenge_method: import.meta.env.VITE_HASH_METHOD
+            })
+        }
 
-        window.location.href = authorizeUrl.toString();
+        fetch(`https://${import.meta.env.VITE_SSO_DOMAIN}/authorize`, requestOptions)
+            .then(response => response.json())
+            .then(data => console.log(data));
+
     }
 
     return <button className='header-btn' onClick={onLoginClick}>

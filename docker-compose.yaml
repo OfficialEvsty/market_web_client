@@ -1,0 +1,8 @@
+services:
+  web:
+    build:
+      context: .
+    environment:
+      VITE_ALLOWED_HOST: $VITE_ALLOWED_HOST
+    ports:
+      - $WEB_PORT:$WEB_PORT
