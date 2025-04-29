@@ -4,8 +4,8 @@ import "/src/styles/layout.css"
 export const LoginButton = () => {
     // code grant + pkce, redirect to sso authority server
     const onLoginClick = async () => {
-        const redirectUrl = window.location.href;
-
+        let redirectUrl = window.location.href;
+        //redirectUrl = "https://umaiden.ru/";
         // generating code challenge and code verifier
         const codeVerifier = generateCodeVerifier();
         const codeChallenge = await generateCodeChallenge(codeVerifier);
@@ -30,8 +30,16 @@ export const LoginButton = () => {
         }
 
         fetch(`https://${import.meta.env.VITE_SSO_DOMAIN}/authorize`, requestOptions)
-            .then(response => response.json())
-            .then(data => console.log(data));
+            .then(async (response) => {
+                if (!response.ok) {
+                    console.log("Login failed.");
+                }
+                const data = await response.json()
+                console.log(data)
+                if (data.authRequired != null) {
+                    window.location.href = data.authRequired.loginUrl
+                }
+            });
     }
 
     return <button className='header-btn' onClick={onLoginClick}>
