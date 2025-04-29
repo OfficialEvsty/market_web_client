@@ -16,6 +16,7 @@ export const LoginButton = () => {
             credentials: "include",
             headers: {
                 'Content-Type': 'x-www-form-urlencoded',
+                'Host': import.meta.env.VITE_SSO_DOMAIN
             },
             body: JSON.stringify({
                 response_type: 'code',
@@ -31,7 +32,6 @@ export const LoginButton = () => {
         fetch(`https://${import.meta.env.VITE_SSO_DOMAIN}/authorize`, requestOptions)
             .then(response => response.json())
             .then(data => console.log(data));
-
     }
 
     return <button className='header-btn' onClick={onLoginClick}>
