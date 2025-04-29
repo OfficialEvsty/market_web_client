@@ -21,7 +21,7 @@ export const LoginButton = () => {
             body: JSON.stringify({
                 response_type: 'code',
                 client_id: import.meta.env.VITE_CLIENT_ID,
-                redirect_uri: redirectUrl + '/' + import.meta.env.VITE_AUTHORIZE_CALLBACK,
+                redirect_uri: redirectUrl + import.meta.env.VITE_AUTHORIZE_CALLBACK,
                 scope: "openid profile",
                 state: 'stateless',
                 code_challenge: codeChallenge,
