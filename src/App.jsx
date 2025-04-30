@@ -15,6 +15,15 @@ function App() {
                     element: <ProductPlacement/>
                 }
             ]
+        },
+        {
+            path: "/redirect",
+            element: <Layout />,
+            children: [
+                {
+                    element: </>
+                }
+            ]
         }
     ])
 
